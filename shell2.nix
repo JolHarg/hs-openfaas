@@ -1,5 +1,5 @@
 with import <nixpkgs> {};
-runCommand "sls2" {
+runCommand "hs-openfaas" {
     buildInputs = [
         haskell.packages.ghc94.cabal-install
         # haskell.compiler.ghcjs
@@ -38,14 +38,14 @@ runCommand "sls2" {
     # cp ${pkgsCross.gnu64.pkgsHostHost.glibc.outPath}/libdl.so.2 packages/sample/hello/libdl.so.2
     # 
     shellHook = ''
-        # x86_64-unknown-linux-gnu-ghc src/Main.hs -ilib -o packages/sample/hello/sls2
+        # x86_64-unknown-linux-gnu-ghc src/Main.hs -ilib -o packages/sample/hello/hs-openfaas
         # rm src/Main src/Main.{hi,o}
 
         #cabal new-build
 
-        #cp $(cabal exec which sls2) packages/sample/hello/sls2
-        #x86_64-unknown-linux-gnu-strip packages/sample/hello/sls2
-        #patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 packages/sample/hello/sls2
+        #cp $(cabal exec which hs-openfaas) packages/sample/hello/hs-openfaas
+        #x86_64-unknown-linux-gnu-strip packages/sample/hello/hs-openfaas
+        #patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 packages/sample/hello/hs-openfaas
 
         cp ${pkgsCross.gnu64.pkgsHostHost.libffi.outPath}/lib64/libffi.so.8.1.2 packages/sample/hello/libffi.so.8
         cp ${pkgsCross.gnu64.pkgsHostHost.gmp.outPath}/lib/libgmp.so.10.4.1 packages/sample/hello/libgmp.so.10

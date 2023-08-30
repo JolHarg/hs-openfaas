@@ -1,0 +1,6 @@
+{
+    "name": "hs-openfaas-hello",
+    "version": "1.0.0",
+    "description": "hs-openfaas-hello",
+    "main": "hello.js"
+}

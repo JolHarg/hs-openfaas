@@ -1,7 +1,7 @@
 parameters: {}
 environment: {}
 packages:
-    - name: sls2
+    - name: hs-openfaas
       shared: false
       environment: {}
       parameters: {}

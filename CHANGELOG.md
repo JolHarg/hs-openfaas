@@ -1,4 +1,4 @@
-# Revision history for sls2
+# Revision history for hs-openfaas
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
