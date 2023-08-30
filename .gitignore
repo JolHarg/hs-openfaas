@@ -23,6 +23,6 @@ node_modules
 package-lock.json
 .DS_Store
 *.so.*
-packages/hs-openfaas/debug/hs-openfaas
-packages/hs-openfaas/hello/hs-openfaas
+packages/openfaas/debug/openfaas
+packages/openfaas/hello/openfaas
 packelf.sh

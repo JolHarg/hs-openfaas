@@ -1,6 +1,0 @@
-{
-    "name": "hs-openfaas-debug",
-    "version": "1.0.0",
-    "description": "hs-openfaas-debug",
-    "main": "debug.js"
-}

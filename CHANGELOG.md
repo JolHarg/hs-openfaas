@@ -1,4 +1,4 @@
-# Revision history for hs-openfaas
+# Revision history for openfaas
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
