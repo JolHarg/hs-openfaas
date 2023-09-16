@@ -27,6 +27,7 @@ let
     shellHook = ''
       gen-hie > hie.yaml
       for i in $(find -type f | grep -v dist-newstyle); do krank $i; done
+      cabal update
 
       build() {
           nix-build -A openfaas -o build
@@ -57,7 +58,7 @@ let
     buildInputs = tools.defaultBuildTools ++ (with nixpkgs; [
         nodejs_20
         closurecompiler
-        cabal-install
+        pkgsForX86.cabal-install
         pkgsForX86.gcc
         pkgsX86.gmp
         pkgsX86.libffi
@@ -66,7 +67,7 @@ let
     nativeBuildInputs = tools.defaultBuildTools ++ (with nixpkgs; [
         nodejs_20
         closurecompiler
-        cabal-install
+        pkgsForX86.cabal-install
         pkgsForX86.gcc
         pkgsX86.gmp
         pkgsX86.libffi
