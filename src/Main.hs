@@ -1,7 +1,7 @@
 module Main where
 
-import           MyHandler
-import           Network.DigitalOcean.CloudFunctions.Handler
+import MyHandler
+import Network.DigitalOcean.CloudFunctions.Handler
 
-main :: IO ()
+main ∷ IO ()
 main = handle myHandler
