@@ -24,6 +24,7 @@ library
                     , text
     hs-source-dirs:   lib
     default-language: GHC2021
+    default-extensions:  DerivingStrategies, UnicodeSyntax, ImportQualifiedPost
 
 executable openfaas
     import:           warnings
@@ -35,10 +36,12 @@ executable openfaas
       , openfaas
     hs-source-dirs:   src
     default-language: GHC2021
+    default-extensions:  DerivingStrategies, UnicodeSyntax, ImportQualifiedPost
 
 test-suite openfaas-test
     import:           warnings
     default-language: GHC2021
+    default-extensions:  DerivingStrategies, UnicodeSyntax, ImportQualifiedPost
     type:             exitcode-stdio-1.0
     hs-source-dirs:   test
     main-is:          Main.hs
