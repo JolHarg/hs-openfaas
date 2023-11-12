@@ -28,32 +28,6 @@ let
       gen-hie > hie.yaml
       for i in $(find -type f | grep -v dist-newstyle); do krank $i; done
       cabal update
-
-      build() {
-          nix-build -A openfaas -o build
-          for PACKAGE in packages/*/*/
-          do
-              rm -rf $PACKAGE/openfaas
-              cp build/bin/openfaas $PACKAGE/openfaas
-              rm -rf $PACKAGE/*.so*
-              cp ${pkgsX86.libffi.outPath}/lib64/libffi.so.8.1.2 $PACKAGE/libffi.so.8
-              cp ${pkgsX86.gmp.outPath}/lib/libgmp.so.10.5.0 $PACKAGE/libgmp.so.10
-              cp ${pkgsX86.glibc.outPath}/lib/{libc.so.6,libm.so.6,librt.so.1,libdl.so.2,ld-linux-x86-64.so.2} $PACKAGE/
-              #x86_64-unknown-linux-gnu-strip $PACKAGE/openfaas
-              chmod +w $PACKAGE/*
-              patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 $PACKAGE/libc.so.6
-          done
-      }
-
-      clean() {
-        git clean -Xf packages
-      }
-
-      [[ -f packages/openfaas/debug/libc.so.6 ]] || build
-
-      # wget -c https://raw.githubusercontent.com/oufm/packelf/master/packelf.sh
-      # chmod +x packelf.sh
-      # export GHC=${if builtins.currentSystem == "aarch64-linux" then "x86_64-unknown-linux-ghc" else "ghc"}
     '';
     buildInputs = tools.defaultBuildTools ++ (with nixpkgs; [
         nodejs_20
@@ -75,9 +49,7 @@ let
     ]);
     withHoogle = false;
   };
-  exe = lib.justStaticExecutables (myHaskellPackages.openfaas);
 in
 {
   inherit shell;
-  openfaas = lib.justStaticExecutables (myHaskellPackages.openfaas);
 }
