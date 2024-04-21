@@ -20,7 +20,7 @@ library
 
   build-depends:
     , aeson
-    , base        >=4.17.0.0
+    , base        >=4.18.0.0
     , bytestring
     , containers
     , text
@@ -44,7 +44,7 @@ test-suite openfaas-test
   hs-source-dirs:     test
   main-is:            Spec.hs
   build-depends:
-    , base        >=4.17.0.0
+    , base        >=4.18.0.0
     , bytestring
     , hspec
     , openfaas
