@@ -1,6 +1,5 @@
 {-# LANGUAGE OverloadedLists     #-}
 {-# LANGUAGE OverloadedStrings   #-}
-{-# LANGUAGE ScopedTypeVariables #-}
 
 module Network.DigitalOcean.CloudFunctions.Handler where
 
