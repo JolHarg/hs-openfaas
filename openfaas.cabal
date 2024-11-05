@@ -27,14 +27,12 @@ library
 
   hs-source-dirs:     lib
   default-language:   GHC2024
-  default-extensions:
-    UnicodeSyntax
+  default-extensions: UnicodeSyntax
 
 test-suite openfaas-test
   import:             warnings
   default-language:   GHC2024
-  default-extensions:
-    UnicodeSyntax
+  default-extensions: UnicodeSyntax
   type:               exitcode-stdio-1.0
   hs-source-dirs:     test
   main-is:            Spec.hs
@@ -43,4 +41,5 @@ test-suite openfaas-test
     , bytestring
     , hspec
     , openfaas
+
   build-tool-depends: hspec-discover:hspec-discover
