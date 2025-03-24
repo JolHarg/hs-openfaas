@@ -1,6 +1,6 @@
-cabal-version:   3.4
+cabal-version:   3.12
 name:            openfaas
-version:         0.1.0.0
+version:         0.2.0.0
 license:         GPL-3.0-only
 license-file:    LICENSE
 author:          Dan Dart
@@ -19,11 +19,11 @@ library
     Network.DigitalOcean.CloudFunctions.Response
 
   build-depends:
-    , aeson
-    , base        >=4.20.0.0
-    , bytestring
-    , containers
-    , text
+    , aeson       ^>=2.2.3.0
+    , base        ^>=4.21.0.0
+    , bytestring  ^>=0.12.2.0
+    , containers  ^>=0.8
+    , text        ^>=2.1.2
 
   hs-source-dirs:     lib
   default-language:   GHC2024
@@ -37,9 +37,9 @@ test-suite openfaas-test
   hs-source-dirs:     test
   main-is:            Spec.hs
   build-depends:
-    , base        >=4.20.0.0
-    , bytestring
-    , hspec
-    , openfaas
+    , base        ^>=4.21.0.0
+    , bytestring  ^>=0.12.2.0
+    , hspec       ^>=2.11.10
+    , openfaas    ^>=0.2.0.0
 
   build-tool-depends: hspec-discover:hspec-discover

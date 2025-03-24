@@ -1,4 +1,4 @@
 packages: *
 
 -- TODO: openfaas
-allow-newer: base
+allow-newer: base, containers
