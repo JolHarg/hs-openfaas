@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DerivingVia #-}
 
 module Network.DigitalOcean.CloudFunctions.Response where
 
@@ -13,4 +13,4 @@ data Response a = Response {
     headers    :: Map String String
 }
     deriving stock Generic
-    deriving anyclass ToJSON
+    deriving ToJSON via Generically (Response a)

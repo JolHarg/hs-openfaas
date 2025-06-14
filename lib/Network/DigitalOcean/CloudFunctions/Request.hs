@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DerivingVia #-}
 
 module Network.DigitalOcean.CloudFunctions.Request where
 
@@ -16,4 +16,4 @@ data Request a = Request {
     ctx     :: Value
 }
     deriving stock Generic
-    deriving anyclass FromJSON
+    deriving FromJSON via Generically (Request a)
