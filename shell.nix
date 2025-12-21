@@ -1,9 +1,9 @@
-with import <nixpkgs> {};
+with import (builtins.fetchTarball "https://github.com/guibou/nixpkgs/archive/ghc-914.zip") {};
 # needs mkShell in order to use headers/etc. from deps! how do we do that from nix-shell 
 mkShell rec {
     packages = [
         cabal-install
-        haskell.compiler.ghc912
+        haskell.compiler.ghc914
         # pkg-config
         zlib.dev
         # krank
